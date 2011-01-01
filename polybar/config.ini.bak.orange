@@ -1,0 +1,220 @@
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+label-mode-padding = 2
+label-mode-foreground = #1e1e20
+label-mode-background = #e39866
+
+label-focused = %index%
+label-focused-background = #dc7f41
+label-focused-foreground = #6b7443
+label-focused-padding = 2
+
+label-unfocused = %index%
+label-unfocused-background = #e39866
+label-unfocused-foreground = #1e1e20
+label-unfocused-padding = 2
+
+label-visible = %index%
+label-visible-background = #e39866
+label-visible-foreground = #1e1e20
+label-visible-padding = 2
+
+label-urgent = %index%
+label-urgent-background = #BA2922
+label-urgent-padding = 2
+
+[module/wlan]
+type = internal/network
+interface = wlan0
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-foreground = #e6a57a
+format-connected-background = #1e1e20
+format-connected-padding = 2
+label-connected = %essid%
+
+format-disconnected =
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = #1e1e20
+
+[module/eth]
+type = internal/network
+interface = 
+interval = 3.0
+
+format-connected-padding = 2
+format-connected-foreground = #e6a57a
+format-connected-background = #1e1e20
+format-connected-prefix = " "
+format-connected-prefix-foreground = #e6a57a
+label-connected = %local_ip%
+
+format-disconnected =
+
+[module/date]
+type = internal/date
+interval = 1
+
+date =
+date-alt = " %Y-%m-%d"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-prefix = 
+format-foreground = #1e1e20
+format-background = #c6723a
+format-padding = 2
+
+label = %date% %time%
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 1
+
+label-open = 
+label-open-foreground = #e39866
+label-close =  cancel
+label-close-foreground = #e39866
+label-separator = |
+label-separator-foreground = #e6a57a
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+menu-0-2 = log off
+menu-0-2-exec = menu-open-3
+
+menu-1-0 = reboot
+menu-1-0-exec = doas /sbin/reboot
+menu-1-1 = get back
+menu-1-1-exec = menu-open-0
+
+menu-2-0 = power off
+menu-2-0-exec = doas /sbin/poweroff
+menu-2-1 = get back
+menu-2-1-exec = menu-open-0
+
+menu-3-0 = log off
+menu-3-0-exec = i3-msg exit
+menu-3-1 = get back
+menu-3-1-exec = menu-open-0
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+[module/pulse]
+type = internal/pulseaudio
+
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+
+Master-mixer = default
+
+mapped = true
+
+label-volume-background = #c6723a
+label-muted-background = #c6723a
+ramp-volume-background = #c6723a
+ramp-headphones-background = #c6723a
+label-volume-foreground = #1e1e20
+label-muted-foreground = #1e1e20 
+ramp-volume-foreground = #1e1e20
+ramp-headphones-foreground = #1e1e20
+
+format-volume = <ramp-volume><label-volume>
+format-muted = <label-muted>
+
+label-muted = "   muted  "
+label-volume = " %percentage%  "
+
+format-volume-padding = 0
+format-muted-padding = 0
+
+ramp-volume-0 = "  "
+ramp-volume-1 = "  "
+ramp-volume-2 = "  "
+ramp-headphones-0 = "  "
+
+[module/cpu]
+	type             = internal/cpu
+	interval         = 0.5
+	format           = <label>
+	label            = %percentage%%
+	label-background = #c6723a
+	label-foreground = #1e1e20
+	label-padding    = 1
+
+	format-prefix = 
+
+	format-prefix-padding    = 1
+	;;format-prefix-background = ${colors.cpu_p_bg}
+	;;format-prefix-foreground = ${colors.modules_prefix_fg}
+
+[module/mem]
+	type     = internal/memory
+	interval = 3
+
+	format           = <label>
+	label            = "%mb_used%"
+	label-background = #c6723a
+	label-foreground = #1e1e20
+	label-padding    = 1
+
+	format-prefix = 
+
+[bar/i3wmthemer_bar]
+width = 100%
+height = 20
+radius = 0 
+fixed-center = false
+
+background = #1e1e20
+foreground = #c5c8c6
+
+line-size = 2
+line-color =
+
+border-size = 0
+border-color =
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = "Fira Code:style=semibold:size=10;1"
+font-1 = "FontAwesome:size=10;1"
+font-2 = "Font Awesome 5 free:size=10;1"
+
+modules-left = date
+modules-center = i3
+tray-position = right 
+modules-right = cpu mem pulse wlan eth powermenu
+
+;tray-padding =
+;wm-restack = i3
+override-redirect = false
+
+cursor-click = pointer
+cursor-scroll = ns-resize
