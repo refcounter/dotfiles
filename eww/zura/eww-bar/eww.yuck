@@ -1,0 +1,170 @@
+;;
+;;
+;;    VARIABLES
+;;
+;;
+(defpoll song :interval "2s"  "scripts/music_info --song")
+(defpoll song_artist :interval "2s"  "scripts/music_info --artist")
+(defpoll current_status :interval "1s"  "scripts/music_info --time")
+(defpoll song_status :interval "2s"  "scripts/music_info --status")
+(defpoll cover_art :interval "2s"  "scripts/music_info --cover")
+(defpoll music_current :interval "3s" "scripts/music_info --all")
+(defpoll clock_time :interval "5m" "date +\%I")
+(defpoll clock_minute :interval "5s" "date +\%M")
+(defpoll clock_date :interval "10h" "date '+%d/%m'")
+(defvar time_rev false)
+
+(defpoll calendar_day :interval "20h" "date '+%d'")
+(defpoll calendar_year :interval "20h" "date '+%Y'")
+
+(defvar eww "$HOME/.local/bin/eww/eww -c $HOME/.config/zura/eww-bar")
+
+(defwidget barcenter []
+  (centerbox :orientation "h"
+    (workspaces)
+    (music)
+    (sidestuff)))
+
+(defwidget sep []
+  (box :class "module-2" :vexpand "false" :hexpand "false"
+    (label :class "separ" :text "|")))
+
+
+(defwidget cal []
+	(box :class "cal" :orientation "v"
+	(box :class "cal-in"
+	(calendar :class "cal" 
+			  :day calendar_day 
+			  :year calendar_year))))
+
+(defwindow calendar
+	:geometry (geometry :x "0px" 
+						:y "7%" 
+                        :anchor "top right"
+						:width "270px" 
+						:height "60px")
+(cal))
+
+
+(defwidget clock_module []
+    (box :class "module" :space-evenly "false" :orientation "h" :spacing "1" 
+      (label :text clock_time :class "clock_time_class" )
+      (label :text "" :class "clock_time_sep" )
+      (label :class "clock_minute_class" :text clock_minute )
+	      (button :onclick "scripts/pop calendar" "♊")
+    ))
+  
+(defpoll ram_used_in_mb 
+  :initial "nipaah"
+  :interval "2s"
+  "scripts/mem.sh")
+
+(defwidget sidestuff []
+  (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
+    (box :orientation 'v'
+      (label :class 'volume_label' :text "${volume}%")
+      (metric :label "🔊"
+            :class "volume_metric"
+            :value volume
+            :onchange "amixer -D pulse sset Master {}%"))
+    (box :orientation 'v'
+      (label :class "mem_label" :text ram_used_in_mb)
+      (metric :label "" :class "mem_metric"
+            :value {EWW_RAM.used_mem_perc}
+            :onchange ""))
+    
+    (clock_module)))
+
+(defwidget all[]
+  (box :class "bar" :orientation "h" :space-evenly false
+    (box :orientation "h" :halign "start"
+        (workspaces))
+    (box :orientation "h" :valign "center"
+      (music))
+    (box :orientation "h" :halign "end"
+      (sidestuff))))
+
+;; music
+(defwidget music [] 
+		(box 
+			(box :orientation "h" :spacing 0 :valign "center" :halign "start" :space-evenly "false" :vexpand "false" :hexpand "false"
+				(box :class "album_art" :vexpand "false" :hexpand "false" :style "background-image: url('${cover_art}');")
+				(box :class "musicbox" :orientation "v" :spacing 0 :valign "center" :halign "start" :space-evenly "false" :vexpand "false" :hexpand "false"
+					(label :class "song" :halign "start" :wrap "false" :limit-width 20 :text song)
+					(label :class "artist" :halign "start" :wrap "false" :limit-width 20 :text song_artist)))
+    (box :class "musicbuttons" :orientation "h" :spacing 5 :valign "center" :halign "end" :space-evenly "false" :vexpand "false" :hexpand "false"
+      (button :class "trackbutton" :onclick "scripts/music_info --prev" "⏪")
+      (button :class "playbutton" :onclick "scripts/music_info --toggle" song_status )
+      (button  :class "trackbutton" :onclick "scripts/music_info --next" "⏩"))))
+
+(defwidget metric [label value onchange]
+(box :orientation "h"
+     :class "metric"
+     :space-evenly false
+  (box :class "label" label)
+  (scale :min 0
+         :max 101
+         :active {onchange != ""}
+         :value value
+         :onchange onchange)))
+
+(defpoll volume :interval "1s"
+"scripts/getvol")
+
+(defpoll time :interval "10s"
+"date '+%H:%M'")
+
+;; 
+;;
+;;      WORKSPACE
+;;
+;;
+
+(defwidget workspaces []
+(literal :content workspace))
+
+
+(deflisten workspace "scripts/workspace")
+
+;;
+;;
+;;
+;;    MAIN BAR
+;;
+;;
+
+;;
+;;
+;; *WINDOWS **********************************************************
+;;
+;;
+
+;; music
+(defwindow mpc
+         :monitor 0
+         :geometry (geometry :x "0px"
+                             :y "0px"
+                             :height "30px"
+                               :anchor "top center")
+           :stacking "fg"
+           :reserve (struts :distance "30px" :side "top")
+           :wm-ignore false
+(music))
+
+(defwindow top_bar 
+  :monitor 0
+  :windowtype "dock"
+  :geometry (geometry :x '0%'
+                      :y '0%'
+                      :width "100%"
+                      :height: "30px"
+                      :anchor "top center" )
+  :reserve (struts :side "top" :distance "30px")
+(barcenter))
+
+;;
+;;
+;;
+;;  SINGLE-LINE TOP BAR
+;;
+(include "single_bar.yuck")

@@ -30,9 +30,7 @@ wk.register({
 -- ************************************** --
 wk.register({
   f = { "<cmd>lua require('hop').hint_char2()<cr>", "Hop char" },
-  ["<c-p>"] = { "<cmd>Telescope resume<cr>", "Resume previous picker" },
   ["<leader>"] = {
-    ["/"] = { "<cmd>Telescope live_grep<cr>", "Live grep" },
     t = {
       name = "+twilight | +telescope",
       w = { "<cmd>Twilight<cr>", "Toggle twilight" },

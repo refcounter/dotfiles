@@ -14,7 +14,7 @@ o.shiftwidth = 2 -- The number of spaces inserted for each indentation
 o.expandtab = true
 
 o.number = true -- Show line number
---o.relativenumber = true
+o.relativenumber = true
 
 -- Ignore case in general, but become case-sensitive when uppercase is present
 o.ignorecase = true

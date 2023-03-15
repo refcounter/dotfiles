@@ -36,6 +36,16 @@ Plug 'glepnir/lspsaga.nvim'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jay-babu/mason-null-ls.nvim'
 Plug 'folke/which-key.nvim'
+Plug 'folke/trouble.nvim'
+Plug 'jose-elias-alvarez/typescript.nvim'
+Plug 'stevearc/aerial.nvim'
+Plug 'olexsmir/gopher.nvim' 
+Plug 'xiyaowong/nvim-transparent'
+Plug 'kdheepak/tabline.nvim'
+Plug 'sudormrfbin/cheatsheet.nvim'
+
+Plug 'nvim-lua/popup.nvim'
+Plug 'kevinhwang91/nvim-bqf'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -81,3 +91,5 @@ autocmd FileType python nnoremap <buffer> <F5> :w<cr>:exec '!clear'<cr>:exec '!p
 nnoremap <C-t> :NERDTreeToggle<CR>
 "JABs Buffer «manager»
 nnoremap <C-b> :JABSOpen<CR>
+
+":TransparentEnable<CR>

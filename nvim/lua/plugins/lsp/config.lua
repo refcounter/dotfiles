@@ -8,7 +8,6 @@ local coq = require('coq')
 local langs = {"tsserver", "vimls", "ruby_ls", "html", "cssls",
     "gopls", "jdtls", "kotlin_language_server",   }
 
-local formatter_servers = { "prettierd", }
 --Install language servers through mason
 require('mason').setup({
   ui = {
@@ -20,13 +19,13 @@ mason_lsp.setup ({
     ensure_installed = langs  ,
 })
 
-
 --Enable language servers
 for _, server in ipairs(langs) do
     lsp[server].setup {
-        coq.lsp_ensure_capabilities({
-            on_attach = on_attach
-        })
+        --coq.lsp_ensure_capabilities({
+            on_attach = on_attach,
+        --})
+        coq.lsp_ensure_capabilities({on_attach = on_attach})
     }
 
 end
@@ -105,3 +104,20 @@ rt.setup({
   },
 })
 
+-- null-ns
+local null_ls = require('plugins.lsp.null-ls')
+
+require('mason-null-ls').setup({
+  ensure_installed = {"prettier", "black",  "prettierd", }
+   --"goimports"}
+})
+
+require("gopher").setup {
+  commands = {
+    go = "go",
+    gomodifytags = "gomodifytags",
+    gotests = "~/go/bin/gotests", -- also you can set custom command path
+    impl = "impl",
+    iferr = "iferr",
+  },
+}

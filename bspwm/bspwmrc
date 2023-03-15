@@ -10,9 +10,9 @@ MONITOR_NAME="LVDS-1"
 EXTERNAL_MONITOR_NAME="HDMI-1"
 
 #Set according to presence of external monitor
-bspc monitor $MONITOR_NAME -d 1 2 3 4 5
+bspc monitor $MONITOR_NAME -d 1 2 3 4 5 6
 
-bspc config border_width         2
+bspc config border_width         1
 bspc config window_gap           5
 bspc config top_padding          0
 bspc config bottom_padding       0
@@ -21,13 +21,14 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc config focused_border_color     "#26F0F1"
+bspc config focused_border_color     $(xrdb -get color1)
 bspc config normal_border_color      "#202A25"
 
 nitrogen --restore &
 sh ~/autostart
 sh ~/mount_drives
-sh ~/.config/polybar/p1/launch_two.sh
+#sh ~/.config/polybar/p1/launch_two.sh
+#polybar -c "~/.config/polybar/p1/config.ini.bak1" bottom 2>&1 | tee -a /tmp/polybar_two_1_bottom.log & disown
 
 bspc rule -a Kupfer.py focus=on
 bspc rule -a antixscreenshot state=floating
@@ -36,9 +37,10 @@ bspc rule -a Chromium desktop='^3'
 bspc rule -a Nitrogen desktop='^5' state=floating
 bspc rule -a pavucontrol state=floating
 bspc rule -a yad-color state=floating
+bspc rule -a persepolis state=floating
 
 # Adding a screensaver sflock
-xss-lock --transfer-sleep-lock -- sflock &
+xautolock -time 5 -locker 'i3lock-fancy -p'
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -47,9 +49,13 @@ xss-lock --transfer-sleep-lock -- sflock &
 #nm-applet & 
 #pa-applet &
 
-# start-up applications
-sh ~/autoapps
-
+# eww widgets
+EWW="~/.local/bin/eww/eww"
+export CFG="~/.config/eww/zura/eww-bar/"
+~/autoapps
+#cd $CFG
+#sh -c "$EWW -c $CFG daemon;$EWW -c $CFG open top_bar1"
+#urxvt -e ~/.config/eww/zura/eww-bar/launch_bar 
 # Fix the cursor default
 # https://www.reddit.com/r/bspwm/comments/8gwwlc/cursor_displays_x_when_not_over_window/dyfj6cw?utm_source=share&utm_medium=web2x&context=3
 # https://wiki.archlinux.org/index.php/Cursor_themes#Change_X_shaped_default_cursor

@@ -1,24 +1,10 @@
-local kanagawa = require("kanagawa")
-local c = require("kanagawa.colors").setup()
 
-local theme = {"kanagawa", "tokyonight"}
+local themes = {"kanagawa", "tokyonight", "github_dark"}
+local selected_index = 1
+local selected_theme = require(themes[1])
 
-kanagawa.setup({
-   theme = "light"
+
+vim.cmd("colorscheme "..themes[selected_index])
+require('transparent').setup({
+  enable = true
 })
-
-local tn = require('tokyonight').setup({
-    style = "night",
-    light_style = "day",
-    transparent = true,
-    terminal_colors = true,
-    styles = {
-        comments = { italic = true },
-        keywords = { italic = true },
-        functions = { bold = true, italic = true },
-    },
-    day_brightness = 0.4,
-
-})
-
-vim.cmd("colorscheme ".. theme[2])
