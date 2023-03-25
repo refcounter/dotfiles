@@ -12,7 +12,7 @@ So i don't have to rewrite whenever changing distro.
 ![norm theme](./screenshots/norm.png)
 ![norm theme](./screenshots/norm2.png)
 
-My first take on "ricing". I drew inspirations from [here]("https://github.com/WillPower3309/awesome-dotfiles"), and [here]("https://github.com/anhsirk0/awesome-config/")
+My first take on "ricing". I drew inspirations from [here](https://github.com/WillPower3309/awesome-dotfiles), and [here](https://github.com/anhsirk0/awesome-config/)
 
 
 ### Requirements
@@ -34,5 +34,5 @@ My first take on "ricing". I drew inspirations from [here]("https://github.com/W
 
 ### Requirements
  - picom
- - [eww widgets]("https://elkowar.github.io/eww")
+ - [eww widgets](https://elkowar.github.io/eww)
  - nitrogen (bg setter)

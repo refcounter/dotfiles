@@ -82,7 +82,7 @@ if has("autocmd")
 endif
 
 "Keybind Ctrl+l to clear search 
-nnoremap <leader>l :nohl<CR>:echo "Search Cleared"<CR>
+"nnoremap <leader>º :nohl<CR>:echo "Search Cleared"<CR>
 
 " When python filetype is detected, F5 can be used to execute script 
 autocmd FileType python nnoremap <buffer> <F5> :w<cr>:exec '!clear'<cr>:exec '!python3' shellescape(expand('%:p'), 1)<cr>

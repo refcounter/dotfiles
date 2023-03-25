@@ -28,7 +28,7 @@ nitrogen --restore &
 sh ~/autostart
 sh ~/mount_drives
 #sh ~/.config/polybar/p1/launch_two.sh
-#polybar -c "~/.config/polybar/p1/config.ini.bak1" bottom 2>&1 | tee -a /tmp/polybar_two_1_bottom.log & disown
+polybar -c "~/.config/polybar/p1/config.ini.bak1" bottom 2>&1 | tee -a /tmp/polybar_two_1_bottom.log & disown
 
 bspc rule -a Kupfer.py focus=on
 bspc rule -a antixscreenshot state=floating
@@ -38,6 +38,9 @@ bspc rule -a Nitrogen desktop='^5' state=floating
 bspc rule -a pavucontrol state=floating
 bspc rule -a yad-color state=floating
 bspc rule -a persepolis state=floating
+bspc rule -a retroarch state=floating
+bspc rule -a mupen64plus state=floating
+bspc rule -a lxtask state=floating
 
 # Adding a screensaver sflock
 xautolock -time 5 -locker 'i3lock-fancy -p'

@@ -19,13 +19,21 @@ mason_lsp.setup ({
     ensure_installed = langs  ,
 })
 
+
 --Enable language servers
 for _, server in ipairs(langs) do
-    lsp[server].setup {
-        --coq.lsp_ensure_capabilities({
+    if server == "tsserver" then
+        require("typescript").setup({
+          server = {
             on_attach = on_attach,
-        --})
-        coq.lsp_ensure_capabilities({on_attach = on_attach})
+            capabilities = coq.lsp_ensure_capabilities({on_attach = on_attach})
+          }
+        })
+    end
+
+    lsp[server].setup {
+      on_attach = on_attach,
+      coq.lsp_ensure_capabilities({on_attach = on_attach})
     }
 
 end
@@ -93,15 +101,13 @@ lsp.sumneko_lua.setup ({
 
 rt.setup({
     server = {
-        on_attach = function(_, bufnr)
-
-            -- Hover actions
-            vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
-
-            -- Code action groups
-            vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
-        end,
+        on_attach = on_attach,
+        --capabilities = coq.lsp_ensure_capabilities({on_attach = on_attach})
   },
+  dap = {
+    adapter = require("rust-tools.dap").get_codelldb_adapter("codelldb",
+      require("mason-registry").get_package("codelldb"):get_install_path() .. "/extension/lldb/lib/liblldb.so")
+    },
 })
 
 -- null-ns
@@ -121,3 +127,5 @@ require("gopher").setup {
     iferr = "iferr",
   },
 }
+
+require('plugins.lsp.bqf')

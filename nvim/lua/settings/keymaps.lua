@@ -50,7 +50,7 @@ wk.register({
       f = { "<cmd>Telescope buffers<cr>", "List all buffers" },
       p = {
         function()
-          local tabline = require("heirline").tabline
+          local tabline = require("tabline")
           local buflist = tabline._buflist[1]
           buflist._picker_labels = {}
           buflist._show_picker = true
@@ -95,10 +95,10 @@ wk.register({
       name = "+dap/debug",
       T = { "<cmd>lua require('dap').terminate()<cr>", "Terminate debugger" },
       t = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle debugger ui" },
-      d = {
-        "+languages",
-        { r = { "<cmd>RustDebuggables<cr>", "RustDebuggables" } },
-      },
+      --p = {
+        --"+languages",
+       -- { r = { "<cmd>RustDebuggables<cr>", "RustDebuggables" } },
+      --},
       r = { "<cmd>lua require('dap').run_last()<cr>", "Run last" },
       b = { "<cmd>lua require('dap').toggle_breakpoint()<cr>", "Toggle breakpoint" },
       c = { "<cmd>lua require('dap').continue()<cr>", "Continue" },

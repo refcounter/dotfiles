@@ -10,5 +10,6 @@ M.npairs = require('plugins.npairs')
 
 M.glow = require('glow').setup {}
 M.jabs = require 'jabs'.setup {}
+M.aerial = require('plugins.aerial')
 
 return M
