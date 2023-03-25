@@ -1,0 +1,92 @@
+! PS: IAM A FUC*ING GENIUSSSSSSSSSSSSSSS
+Rxvt.font: xft:CodeNewRoman Nerd Font Mono:style=Bold:size=11,\
+xft:DroidSansMono Nerd Font:size=11:style=Bold, \
+xft:DejaVu Sans Mono:size=10:autohint=true:autoalias=true, \
+xft:DroidSansMono Nerd Font:size=8:autohint=true:autoalias:true, \
+xft:JetBrainsMono Nerd Font:size=9:autohint=true:autoalias:true
+
+URxvt.intesityStyles: true
+
+!URxvt.boldFont: xft:DroidSansMono Nerd Font:style=Bold:size=11
+URxvt.depth:                      32
+URxvt*scrollBar:                  false
+URxvt*mouseWheelScrollPage:       false
+URxvt*cursorBlink:                true
+URxvt*saveLines:                  5000
+URxvt*urgentOnBell:               true
+URxvt*internalBorder: 5
+URxvt*geometry: 70x19
+
+! Normal copy-paste keybindings without perls
+URxvt.iso14755:                   false
+URxvt.keysym.Shift-Control-V:     eval:paste_clipboard
+URxvt.keysym.Shift-Control-C:     eval:selection_to_clipboard
+
+!Xterm escape codes, word by word movement
+URxvt.keysym.Control-Left:        \033[1;5D
+URxvt.keysym.Shift-Control-Left:  \033[1;6D
+URxvt.keysym.Control-Right:       \033[1;5C
+URxvt.keysym.Shift-Control-Right: \033[1;6C
+URxvt.keysym.Control-Up:          \033[1;5A
+URxvt.keysym.Shift-Control-Up:    \033[1;6A
+URxvt.keysym.Control-Down:        \033[1;5B
+URxvt.keysym.Shift-Control-Down:  \033[1;6B
+URxvt*transparent: true
+URxvt*shading: 38
+
+Xft.autohint: 1 
+Xft.antialias: 1
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.dpi: 86
+Xft.rgba: rgba
+Xft.lcdfilter: lcddefault
+
+! https://github.com/majutsushi/urxvt-font-size
+ URxvt.prl-ext-common: ...,font-size
+
+!
+! Generated with :
+! XRDB2Xreources.py
+! Sakura theme
+!
+*.foreground:  #dd7bdc
+*.background:  #18131e
+*.cursorColor: #ff65fd
+!
+! Black
+*.color0:      #000000
+*.color8:      #786d69
+!
+! Red
+*.color1:      #d52370
+*.color9:      #f41d99
+!
+! Green
+*.color2:      #41af1a
+*.color10:     #22e529
+!
+! Yellow
+*.color3:      #bc7053
+*.color11:     #f59574
+!
+! Blue
+*.color4:      #6964ab
+*.color12:     #9892f1
+!
+! Magenta
+*.color5:      #c71fbf
+*.color13:     #e90cdd
+!
+! Cyan
+*.color6:      #939393
+*.color14:     #eeeeee
+!
+! White
+*.color7:      #998eac
+*.color15:     #cbb6ff
+!
+! Bold, Italic, Underline
+*.colorBD:     #d445d2
+!*.colorIT:
+!*.colorUL:
