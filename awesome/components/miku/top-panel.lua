@@ -17,6 +17,14 @@ local gears = require("gears")
 
 local dpi = beautiful.xresources.apply_dpi
 
+
+local tag_list = require("widgets.tag-list")
+local separator = require("widgets.horizontal-separator")
+local folder = require("widgets.folder")
+local utils = require("components.ui")
+
+local home_dir = os.getenv("HOME")
+
 -- define module table
 local top_panel = {}
 
@@ -46,17 +54,20 @@ top_panel.create = function(s)
    panel:setup {
       expand = "none",
       layout = wibox.layout.align.horizontal,
-      require('widgets.ram')(),
+      {
+        layout = wibox.layout.align.horizontal,
+        wibox.layout.margin(require("widgets.layout-box"), dpi(1), dpi(3), dpi(5), dpi(2)),
+        wibox.layout.margin(tag_list.create(s), dpi(25), dpi(5), dpi(5), dpi(5)),
+      },
       {
           layout = wibox.container.place,
           require('widgets.playerctl').create()
       },
       {
          layout = wibox.layout.fixed.horizontal,
-         wibox.layout.margin(wibox.widget.systray(), dpi(5), dpi(5), dpi(5), dpi(5)),
-         require("widgets.bluetooth"),
-         require("widgets.network")(),
-         --require("widgets.battery")
+         wibox.layout.margin(require('widgets.ram')(), dpi(15), dpi(15), 0, 0),
+         require("widgets.calendar").create(s),
+         wibox.layout.margin(wibox.widget.systray(), dpi(15), dpi(1), dpi(1), dpi(1)),
       }
    }
 

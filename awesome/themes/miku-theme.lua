@@ -29,9 +29,8 @@ theme.name = "miku"
 --theme.font = "SF Pro Text 9"
 --theme.title_font = "SF Pro Display Medium 10"
 
-theme.font = "Open Sans Bold 9"
-theme.title_font = "TerminessTTF Nerd Font Mono Medium 10"
-
+theme.font = "Tilt Neon Bold 9"
+theme.title_font = "JetBrainsMono Nerd Font Bold 10"
 
 -- Background
 theme.bg_normal = "#5B60711A"
