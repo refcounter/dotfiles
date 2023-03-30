@@ -52,9 +52,9 @@ norm.initialize = function()
       end
 
       -- Only add the left panel on the primary screen
-      if s.index == 1 then
-         bottom_panel.create(s)
-      end
+      --if s.index == 1 then
+         --bottom_panel.create(s)
+      --end
 
       -- Add the top panel to every screen
       top_panel.create(s)
@@ -62,6 +62,8 @@ norm.initialize = function()
 
    -- set initally selected tag to be active
    local initial_tag = awful.screen.focused().selected_tag
+
+   awful.spawn.with_shell(apps.polybar)
 end
 
 return norm

@@ -33,7 +33,7 @@ o.scrolloff = 8 -- Minimum lines to keep above and below cursor when scrolling
 o.undofile = true -- Persistent undo
 o.completeopt:append({ "menuone", "noselect" }) -- Completion behaviour
 o.smartindent = true
-o.cursorline = true -- Hightlight the current line
+--o.cursorline = true -- Hightlight the current line
 o.signcolumn = "yes" -- Always show the sign column, otherwise it would shift the text each time
 o.termguicolors = true
 

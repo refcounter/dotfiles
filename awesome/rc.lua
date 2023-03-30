@@ -19,7 +19,7 @@ local themes = {
     "sakura",
     "norm",
 }
-local theme = themes[1]
+local theme = themes[3]
 local theme_config_dir = gears.filesystem.get_configuration_dir() .. "/configuration/" .. theme .. "/"
 
 -- define default apps (global variable so other components can access it)
@@ -32,6 +32,7 @@ apps = {
    screenshot = "scrot -e 'mv $f ~/Pictures/ 2>/dev/null'",
    filebrowser = "zzzfm" or "ranger",
    audio_remote = "mpc -p 6670 " or "playerctl",
+   polybar = "polybar -c \"~/.config/polybar/p1/config.ini.bak1\" bottom 2>&1 | tee -a /tmp/polybar_two_1_bottom.log & disown",
 }
 
 -- define wireless and ethernet interface names for the network widget

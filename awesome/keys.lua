@@ -243,8 +243,12 @@ keys.globalkeys = gears.table.join(
    awful.key({}, "Print",
       function()
          awful.util.spawn(apps.screenshot, false)
-      end
-   ),
+      end, {description = "Takes an instant screenshot and saves it to ~/Pictures directory", group = "hotkeys"}),
+
+    awful.key({modkey, },  "Print", function() 
+      awful.util.spawn("flameshot gui", false) 
+    end, {description = "Screenshot with flameshot", group = "hotkeys"})
+   ,
 
    -- =========================================
    -- RELOAD / QUIT AWESOME

@@ -11,7 +11,8 @@ super + Return
 
 # window switcher
 super + a
-  sh ~/.config/rofi/rofi-tab-dark.sh
+  rofi -show window -theme $HOME"/.config/rofi/launchers/type-2/style-15.rasi"
+ 
 
 super + ctrl + {s}
 	bspc node $(bspc query -N -n .hidden | tail -n1) -g hidden=off
@@ -128,7 +129,7 @@ super+Print
 Print
   scrot -e 'mv $f ~/Pictures/ 2>/dev/null'
 super+{d}
-  rofi -show drun -theme $HOME"/.config/rofi/launchers/type-7/style-7.rasi"
+  rofi -show drun -theme $HOME"/.config/rofi/launchers/type-2/style-15.rasi"
 
 # quit/restart bspwm
 super + shift + {q,r}
