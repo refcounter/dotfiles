@@ -76,7 +76,6 @@ theme.bg_focus                  = theme.bg_main
 theme.fg_urgent                 = theme.red
 theme.bg_urgent                 = theme.black
 theme.border_normal             = theme.bg_main
-theme.border_focus              = theme.bg_accent_alt
 
 
 -- spacing

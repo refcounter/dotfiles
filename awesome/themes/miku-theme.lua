@@ -41,6 +41,9 @@ theme.bg_minimize = "#444444"
 theme.magenta       = "#ba35af"
 theme.magenta_alt   = "#8e44f3"
 theme.cyan = "#00FFFF"
+theme.border_normal             = theme.bg_focus
+theme.border_focus              = theme.cyan
+
 
 -- Foreground
 theme.fg_normal = "#ffffff"
@@ -57,11 +60,11 @@ theme.corner_radius = dpi(20)
 
 -- Window Borders
 theme.border_marked = theme.fg_urgent
-theme.useless_gap = dpi(5)
-theme.border_width = dpi(5)
-theme.border_radius = dpi(10)
+theme.useless_gap = dpi(2)
+theme.border_width = dpi(2)
+theme.border_radius = dpi(8)
 theme.border_focus = theme.cyan
-theme.border_normal = theme.bg_normal
+
 
 -- Taglist
 theme.taglist_bg_empty = "#00000000"

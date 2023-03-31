@@ -3,7 +3,7 @@ So i don't have to rewrite whenever changing distro.
 
 ## Awesome WM dotfiles
 
-![dark blue theme](./screenshots/dark_blue.png)
+![miku_theme](./screenshots/miku.png)
 ![dar blue theme](./screenshots/db2.png)
 
 ![sakura theme](./screenshots/sakura1.png)
