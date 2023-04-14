@@ -6,17 +6,13 @@ local coq = require('coq')
 
 --Language servers
 local langs = {"tsserver", "vimls", "ruby_ls", "html", "cssls",
-    "gopls", "jdtls", "kotlin_language_server",   }
+    "gopls", "jdtls", "kotlin_language_server", 'pyright'   }
 
 --Install language servers through mason
 require('mason').setup({
   ui = {
     border = "rounded",
   },
-})
-
-mason_lsp.setup ({
-    ensure_installed = langs  ,
 })
 
 
@@ -39,14 +35,6 @@ for _, server in ipairs(langs) do
 end
 
 --Specific configs for manually installed servers
-lsp.pyright.setup({
-    coq.lsp_ensure_capabilities({on_attach = on_attach}),
-    cmd = {
-        '/home/zura/.npm-global/bin/pyright'
-    },
-    single_file_support = true,
-})
-
 lsp.sumneko_lua.setup ({
     coq.lsp_ensure_capabilities({
         on_attach = on_attach
@@ -111,12 +99,12 @@ rt.setup({
 })
 
 -- null-ns
-local null_ls = require('plugins.lsp.null-ls')
+--local null_ls = require('plugins.lsp.null-ls')
 
-require('mason-null-ls').setup({
-  ensure_installed = {"prettier", "black",  "prettierd", }
+--require('mason-null-ls').setup({
+  --ensure_installed = {"prettier", "black",  "prettierd", }
    --"goimports"}
-})
+--})
 
 require("gopher").setup {
   commands = {

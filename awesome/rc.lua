@@ -19,7 +19,7 @@ local themes = {
     "sakura",
     "norm",
 }
-local theme = themes[1]
+local theme = themes[3]
 local theme_config_dir = gears.filesystem.get_configuration_dir() .. "/configuration/" .. theme .. "/"
 
 -- define default apps (global variable so other components can access it)
@@ -27,7 +27,7 @@ apps = {
    network_manager = "", -- recommended: nm-connection-editor
    power_manager = "", -- recommended: xfce4-power-manager
    terminal = "urxvt",
-   launcher = 'rofi -show drun -theme .config/rofi/launchers/type-7/style-7.rasi',
+   launcher = 'rofi -show drun -theme ~/.config/rofi/launchers/type-2/style-15.rasi',
    lock = "i3lock",
    screenshot = "scrot -e 'mv $f ~/Pictures/ 2>/dev/null'",
    filebrowser = "zzzfm" or "ranger",

@@ -1,10 +1,11 @@
 
-local themes = {"kanagawa", "tokyonight", "github_dark"}
-local selected_index = 1
-local selected_theme = require(themes[1])
+local themes = {"kanagawa", "tokyonight", "github_dark", 'tokyonight-night', 'tokyonight-day'}
+local selected_index = 4
 
+require('tokyonight').setup({
+  transparent = true,
+})
 
 vim.cmd("colorscheme "..themes[selected_index])
-require('transparent').setup({
-  enable = true
-})
+
+
