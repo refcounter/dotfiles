@@ -4,10 +4,10 @@ So i don't have to rewrite whenever changing distro.
 ## Awesome WM dotfiles
 
 ![miku_theme](./screenshots/miku.png)
-![dar blue theme](./screenshots/db2.png)
+![dark blue theme](./screenshots/db2.png)
 
 ![sakura theme](./screenshots/sakura1.png)
-![sakura theme](./screenshots/sakura2.png)
+![sakura theme](./screenshots/sakura-theme.png)
 
 ![norm theme](./screenshots/norm.png)
 ![norm theme](./screenshots/norm2.png)
@@ -18,7 +18,8 @@ My first take on "ricing". I drew inspirations from [here](https://github.com/Wi
 ### Requirements
  - awesome wm (> v4.3)
  - picom 
- - mpd + mpc or playerctl (for current song widget)[Optional] 
+ - mpd + mpc or playerctl (for current song widget)[Optional]
+ - polybar (for norm theme)
 
 ## i3 dotfiles
 ![polybar theme](./screenshots/polybar.png)
@@ -36,3 +37,4 @@ My first take on "ricing". I drew inspirations from [here](https://github.com/Wi
  - picom
  - [eww widgets](https://elkowar.github.io/eww)
  - nitrogen (bg setter)
+ - polybar

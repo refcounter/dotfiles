@@ -8,13 +8,6 @@ local dpi = beautiful.xresources.apply_dpi
 local awful = require("awful")
 local gears = require("gears")
 
-local tag_list = require("widgets.tag-list")
-local separator = require("widgets.horizontal-separator")
-local folder = require("widgets.folder")
-local utils = require("components.ui")
-
-local home_dir = os.getenv("HOME")
-
 -- define module table
 local bottom_panel = {}
 
@@ -73,10 +66,8 @@ bottom_panel.create = function(s)
       expand = "none",
       layout = wibox.layout.align.horizontal,
 
-      require("widgets.calendar").create(s),
       {
          layout = wibox.layout.fixed.horizontal,
-         wibox.layout.margin(tag_list.create(s), dpi(5), dpi(5), 0, 0)
          --wrap_bg(tag_list.create(s), dpi(5), dpi(5), 0, 0)
       },
       wibox.layout.margin(require("widgets.layout-box"), dpi(13), dpi(3), dpi(3), dpi(3)),

@@ -36,7 +36,6 @@ sakura.initialize = function()
    end)
 
    -- Import panels
-   local bottom_panel = require("components.sakura.bottom-panel")
    local top_panel = require("components.sakura.top-panel")
 
    -- Set up each screen (add tags & panels)
@@ -49,11 +48,6 @@ sakura.initialize = function()
             screen = s,
             selected = i == 1
          })
-      end
-
-      -- Only add the left panel on the primary screen
-      if s.index == 1 then
-         bottom_panel.create(s)
       end
 
       -- Add the top panel to every screen
