@@ -24,7 +24,7 @@ local theme = {}
 -- ===================================================================
 
 
-theme.name = "sakura"
+theme.name = "norm"
 
 -- Font
 --theme.font = "SF Pro Text 9"

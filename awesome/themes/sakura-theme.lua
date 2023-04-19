@@ -112,13 +112,13 @@ theme.fg_minimize = theme.fg_dim
 theme.gap_single_client = true
 
 -- Corner Radius of Rounded Windows
-theme.corner_radius = dpi(20)
+theme.corner_radius = dpi(9)
 
 -- Window Borders
 theme.border_marked = theme.fg_urgent
 theme.useless_gap = dpi(5)
-theme.border_width = dpi(5)
-theme.border_radius = dpi(10)
+theme.border_width = dpi(1)
+theme.border_radius = dpi(9)
 theme.border_focus = theme.bg_accent_alt
 theme.border_normal = theme.bg_normal
 

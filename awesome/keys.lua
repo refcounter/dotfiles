@@ -180,6 +180,12 @@ keys.globalkeys = gears.table.join(
       {description = "application launcher", group = "launcher"}
    ),
 
+   awful.key({modkey}, "w",
+      function()
+         awful.spawn(apps.window_switcher)
+      end,
+      {description = "window switcher", group = "launcher"}
+   ),
    -- =========================================
    -- FUNCTION KEYS
    -- =========================================
