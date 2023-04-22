@@ -52,14 +52,16 @@ function rules.create(clientkeys, clientbuttons)
             instance = {
                "DTA",
                "copyq",
-               "guake"
+               "guake",
+               "persepolis"
             },
             class = {
                "Nm-connection-editor",
                "vlc",
                "zzzfm",
                "xdman",
-               "guake"
+               "guake",
+               "persepolis"
             },
             name = {
                "Event Tester",
@@ -89,7 +91,8 @@ function rules.create(clientkeys, clientbuttons)
       {
          rule_any = {
             class = {
-               "Firefox"
+               "Firefox",
+               "Chromium",
             },
          }, properties = {switchtotag = true}
       },

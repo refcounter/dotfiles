@@ -12,7 +12,6 @@
 
 
 local xresources = require("beautiful.xresources")
-local gears = require("gears")
 local dpi = xresources.apply_dpi
 
 -- define module table
@@ -65,7 +64,7 @@ theme.mpc_color = "#F9A7CB"
 theme.mpc_bg = "#765EA9"
 
 theme.tray_bg = "#DB98BD21"
-
+theme.top_panel_bg = "#090722"
 theme.transparent = "#00000000"
 theme.black = "#16161D"
 
@@ -142,8 +141,8 @@ theme.tasklist_fg_urgent = theme.fg_urgent
 theme.tasklist_fg_normal = theme.fg_normal
 
 -- Panel Sizing
-theme.bottom_panel_width = dpi(40)
 theme.top_panel_height = dpi(30)
+theme.top_panel_width = dpi(1000)
 
 -- Notification Sizing
 theme.notification_max_width = dpi(350)

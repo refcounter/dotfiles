@@ -82,7 +82,7 @@ configuration {
 	display-filebrowser: "Files";
 
 	/*---------- Misc setting ----------*/
-	terminal: "urxvt";
+	terminal: "kitty";
 	font: "Mono 12";
 	sort: false;
 	threads: 0;

@@ -5,19 +5,11 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
 local wibox = require("wibox")
-local gears = require("gears")
 
 local dpi = beautiful.xresources.apply_dpi
 
 local tag_list = require("widgets.tag-list")
-local separator = require("widgets.horizontal-separator")
-local folder = require("widgets.folder")
 local utils = require("components.ui")
-
-local home_dir = os.getenv("HOME")
-
-
-
 -- define module table
 local top_panel = {}
 
@@ -36,7 +28,7 @@ top_panel.create = function(s)
       visible = true,
       height = beautiful.top_panel_height,
       width = s.geometry.width,
-      bg = beautiful.transparent,
+      bg = beautiful.top_panel_bg,
       type = "dock",
    })
 

@@ -80,12 +80,12 @@ local function lock_command()
 end
 
 local function poweroff_command()
-   awful.spawn.with_shell("poweroff")
+   awful.spawn.with_shell("echo \"zuraa\" | sudo -S shutdown -h now")
    awful.keygrabber.stop(exit_screen_grabber)
 end
 
 local function reboot_command()
-   awful.spawn.with_shell("reboot")
+   awful.spawn.with_shell("echo \"zuraa\" | sudo -S shutdown -r now" )
    awful.keygrabber.stop(exit_screen_grabber)
 end
 

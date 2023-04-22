@@ -35,7 +35,6 @@ miku.initialize = function()
    end)
 
    -- Import panels
-   local bottom_panel = require("components.miku.bottom-panel")
    local top_panel = require("components.miku.top-panel")
 
    -- Set up each screen (add tags & panels)
