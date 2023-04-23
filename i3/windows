@@ -1,0 +1,48 @@
+
+# Open specific applications in floating mode
+for_window [window_role="About"] floating enable
+for_window [title="alsamixer"] floating enable border pixel 1
+for_window [class="Calamares"] floating enable border normal
+for_window [class="Clipgrab"] floating enable
+for_window [title="File Transfer*"] floating enable
+for_window [class="eog"] floating enable
+for_window [class="Galculator"] floating enable border pixel 1
+for_window [class="GParted"] floating enable border normal
+for_window [class="(?i)gnome-calculator"] floating enable
+for_window [title="i3_help"] floating enable sticky enable border normal
+for_window [class="Lightdm-gtk-greeter-settings"] floating enable
+for_window [class="Lxappearance"] floating enable sticky enable border normal
+for_window [class="Manjaro-hello"] floating enable
+for_window [class="Manjaro Settings Manager"] floating enable border normal
+for_window [title="mixertui"] floating enable border pixel 1
+for_window [title="MuseScore: Play Panel"] floating enable
+for_window [class="Nitrogen"] floating enable sticky enable border normal
+for_window [class="Oblogout"] fullscreen enable
+for_window [class="octopi"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="qt5ct"] floating enable sticky enable border normal
+for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
+for_window [title="QEMU"] floating enable
+for_window [class="Simple-scan"] floating enable border normal
+for_window [class="(?i)System-config-printer.py"] floating enable border normal
+for_window [class="Skype"] floating enable border normal
+for_window [class="Thus"] floating enable border normal
+for_window [class="Timeset-gui"] floating enable border normal
+for_window [class="(?i)xcalc"] floating enable
+for_window [class="Xfburn"] floating enable
+for_window [class="^Audacious$"] floating enable
+for_window [class="^Audacious$"] 9 # audacious only on workspace 9
+for_window [class="^Thunar$"] floating enable
+for_window [class="^Nitrogen"] floating enable
+for_window [class="^zzzfm"] floating enable
+for_window [class="^ncmpcpp"] floating enable
+for_window [class="^guake"] floating enable
+for_window [class='^Chromium$'] 4
+
+# switch to workspace with urgent window automatically
+for_window [urgent=latest] focus
+
+# deals with popups on fullscreen
+popup_during_fullscreen smart
+

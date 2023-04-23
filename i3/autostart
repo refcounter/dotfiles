@@ -1,0 +1,11 @@
+
+# Autostart applications
+exec_always --no-startup-id feh --no-fehbg --bg-fill ~/Imagens/wallpapers/red-cyberpunk.jpg
+exec_always --no-startup-id ~/autostart
+
+exec_always --no-startup-id $HOME/.config/polybar/launch_two.sh
+#exec_always --no-startup-id $HOME/.config/eww/arin/launch_bar
+exec --no-startup-id xautolock -time 5 -locker 'i3lock-fancy -p'
+exec --no-startup-id ~/mount_drives
+
+

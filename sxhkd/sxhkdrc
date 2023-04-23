@@ -4,14 +4,14 @@
 
 # terminal emulator
 super + Return
-  urxvt
+  kitty
 # program launcher
 #super + ctrl + {m,x,y,z}
 	#bspc node -g {marked,locked,sticky,private}
 
 # window switcher
 super + a
-  rofi -show window -theme $HOME"/.config/rofi/launchers/type-2/style-15.rasi"
+  rofi -show window -theme $HOME"/.config/rofi/launchers/type-1/style-11.rasi"
  
 
 super + ctrl + {s}
@@ -42,7 +42,7 @@ super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
-super + {grave,Tab}
+super + {Tab}
 	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
@@ -123,13 +123,13 @@ XF86AudioPrev
 
 #My Shortcuts
 super + alt + Escape 
-  lxtask
+  kitty -e 'btop'
 super+Print 
   flameshot gui
 Print
   scrot -e 'mv $f ~/Pictures/ 2>/dev/null'
 super+{d}
-  rofi -show drun -theme $HOME"/.config/rofi/launchers/type-2/style-15.rasi"
+  rofi -show drun -theme $HOME"/.config/rofi/launchers/type-1/style-11.rasi"
 
 # quit/restart bspwm
 super + shift + {q,r}

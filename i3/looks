@@ -1,0 +1,14 @@
+# Theme colors
+client.focused          #c5c8c6 #1d1f21 #c5c8c6 #81a2be #81a2be
+client.focused_inactive #c5c8c6 #1d1f21 #c5c8c6 #5f819d #5f819d
+client.unfocused        #c5c8c6 #1d1f21 #c5c8c6 #5f819d #5f819d
+client.urgent           #c5c8c6 #1d1f21 #c5c8c6 #5f819d #5f819d
+client.placeholder      #c5c8c6 #1d1f21 #c5c8c6 #5f819d #5f819d
+
+font xft: DejaVu Sans 11
+new_window pixel 2
+new_float pixel 2
+default_border none
+hide_edge_borders both
+focus_follows_mouse no
+

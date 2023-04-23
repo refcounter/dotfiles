@@ -22,7 +22,7 @@ My first take on "ricing". I drew inspirations from [here](https://github.com/Wi
  - polybar (for norm theme)
 
 ## i3 dotfiles
-![polybar theme](./screenshots/polybar.png)
+![polybar theme](./screenshots/i3-new_000.png)
 
 ### Requirements
  - picom
