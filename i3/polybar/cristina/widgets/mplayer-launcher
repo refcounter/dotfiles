@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+mplayer() {
+    LOCKFILE="$HOME/.cache/eww-cris-mplayer.lock"
+
+if [[ ! -f "$LOCKFILE" ]]; then
+    touch "$LOCKFILE"
+    ~/bin/eww/eww open music -c ~/.config/i3/polybar/cristina/widgets/
+elif [[ -f "$LOCKFILE" ]]; then
+    ~/bin/eww/eww close music -c ~/.config/i3/polybar/cristina/widgets/
+    rm "$LOCKFILE"
+fi
+}
+
+mplayer

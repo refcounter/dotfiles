@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+
+if [[ ! -f "$1" ]]; then 
+  exit
+fi
+
+mime=$(file -b --mime-type "$1")
+echo $mime
+if [[ "${mime%/%}" = "text" ]]; then
+  nnnedit "$1"
+elif [[ "${mime%/%}" = "image" ]]; then
+  sxiv "$1"
+elif [[ "${mime%/%}" = "video" ]]; then
+  vlc "$1"
+elif [[ "${mime%/%}" = "audio" ]]; then
+  mpv "$1"
+elif [[ "${mime%/%}" = "applicationaudio/epub+zip" || "${mime%/%}" = "applicationaudio/pdf" ]]; then
+  zathura "$1"
+fi
+

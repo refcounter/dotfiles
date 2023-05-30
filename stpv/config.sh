@@ -1,0 +1,10 @@
+PV_IMAGE_ENABLED=1        # show image previews when possible
+PV_TYPE=img               # (img or text) where text shows image previews in the terminal
+PREFER_TEXT=              # prefer text over images when displaying documents
+DARK_DOCS=                # invert documents preview color in image previews
+SAFE=1                    # kill itself if needed (check main for details)
+AUTO_ORIENT=1             # auto orient images
+MAX_IMG_CACHE_SIZE=34300kb  # max image cache size
+MAX_IMG_CACHE_W=1920      # max image cached image width
+MAX_IMG_CACHE_H=1080      # max image cached image height
+TIMEOUT=15                 # maximum time in seconds stpv should take, approximately

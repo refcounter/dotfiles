@@ -1,0 +1,89 @@
+## Set environment variables
+env:
+  TERM: alacritty
+  WINIT_X11_SCALE_FACTOR: '1.0'
+
+## Terminal window settings
+window:
+  dimensions:
+    columns: 82
+    lines: 24
+
+  padding:
+    x: 0
+    y: 0
+
+  decorations: none
+  startup_mode: Windowed
+  dynamic_title: true
+
+## scrolling
+  history: 10000
+  multiplier: 3
+
+## Background opacity
+  opacity: 0.9
+
+## Cursor
+cursor:
+  style:
+    shape: Block
+    blinking: On
+
+  unfocused_hollow: false
+
+## Font configuration
+font:
+  # Normal (roman) font face
+  normal:
+    family: "CaskaydiaCove Nerd Font Propo"
+    style: "SemiBold"
+
+  # Bold font face
+  bold:
+    family: "SauceCodePro Nerd Font"
+    style: "Black"
+
+  # Italic font face
+  italic:
+    family: "CaskaydiaCove Nerd Font"
+    style: "Italic"
+
+  # Bold italic font face
+  bold_italic:
+    family: "Monofur Nerd Font Propo"
+    style: "Bold Italic"
+
+  # Point size
+  size: 10
+
+
+## Live config reload
+live_config_reload: true
+# BEGIN ACE
+colors:
+  primary:
+    background: '#000019'
+    foreground: '#8ed9eb'
+  cursor:
+    text:       '#000019'
+    cursor:     '#8ed9eb'
+  normal:
+    black:      '#000019'
+    red:        '#C1CB36'
+    green:      '#061093'
+    yellow:     '#0B41C4'
+    blue:       '#0366E6'
+    magenta:    '#BC03FD'
+    cyan:       '#0598F4'
+    white:      '#8ed9eb'
+  bright:
+    black:      '#6397a4'
+    red:        '#C1CB36'
+    green:      '#061093'
+    yellow:     '#0B41C4'
+    blue:       '#0366E6'
+    magenta:    '#BC03FD'
+    cyan:       '#0598F4'
+    white:      '#8ed9eb'
+# END ACE

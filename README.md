@@ -12,7 +12,7 @@ So i don't have to rewrite whenever changing distro.
 ![norm theme](./screenshots/norm.png)
 ![norm theme](./screenshots/norm2.png)
 
-My first take on "ricing". I drew inspirations from [here](https://github.com/WillPower3309/awesome-dotfiles), and [here](https://github.com/anhsirk0/awesome-config/)
+My first take on "ricing". I drew inspirations from [here](https://github.com/WillPower3309/awesome-dotfiles), [here](https://github.com/anhsirk0/awesome-config/), and [zombi3](https://github.com/gh0stzk/dotfiles)
 
 
 ### Requirements
@@ -31,10 +31,17 @@ My first take on "ricing". I drew inspirations from [here](https://github.com/Wi
  - feh (background setter)
 
 ## Bspwm dotfiles
-![bspwm eww theme](./screenshots/bspwm-sakura-spike.png)
+![bspwm eww theme](./screenshots/bspwm-emilia.png)
+![bspwm eww theme](./screenshots/bspwm-emilia2.png)
 
 ### Requirements
- - picom
- - [eww widgets](https://elkowar.github.io/eww)
- - nitrogen (bg setter)
+ - Alacritty (terminal) [Optional]
+ - picom (compositor)
+ - [eww widgets](https://elkowar.github.io/eww) [Optional]
+ - sxhkdrc (for keymapping)
  - polybar
+ - dunst (notification daemon)
+ - xsetroot (fixes mouse pointer)
+ - mpd, mpc, playerctl [Optional]
+ - rofi (for menus)
+ - maim, flameshot (screenshot utilities)

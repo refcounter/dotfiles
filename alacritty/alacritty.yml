@@ -1,0 +1,31 @@
+import: 
+  - ~/.config/alacritty/config.yml
+  - ~/.config/alacritty/colors.yml
+
+# # BEGIN ACE
+# colors:
+#   primary:
+#     background: '#00001A'
+#     foreground: '#8ed9ea'
+#   cursor:
+#     text:       '#00001A'
+#     cursor:     '#8ed9ea'
+#   normal:
+#     black:      '#00001A'
+#     red:        '#C1CB36'
+#     green:      '#061193'
+#     yellow:     '#0C41C4'
+#     blue:       '#0466E6'
+#     magenta:    '#BB04FD'
+#     cyan:       '#0599F3'
+#     white:      '#8ed9ea'
+#   bright:
+#     black:      '#6397a3'
+#     red:        '#C1CB36'
+#     green:      '#061193'
+#     yellow:     '#0C41C4'
+#     blue:       '#0466E6'
+#     magenta:    '#BB04FD'
+#     cyan:       '#0599F3'
+#     white:      '#8ed9ea'
+# # END ACE
